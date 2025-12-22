@@ -7,6 +7,7 @@ __pycache__/
 *.pyc
 
 # 訓練模型與資料
+training_file/
 models/*.pt
 runs/
 datasets/

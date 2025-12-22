@@ -9,6 +9,7 @@ from datetime import datetime
 from dotenv import load_dotenv
 
 load_dotenv()
+print(f"Token 長度: {len(os.getenv('LINE_CHANNEL_ACCESS_TOKEN') or '')}")
 
 def log_meal(food_name, calories):
     file_exists = os.path.isfile('diet_logs.csv')
@@ -28,8 +29,8 @@ LINE_CHANNEL_SECRET = os.getenv('LINE_CHANNEL_SECRET')
 line_bot_api = LineBotApi(LINE_CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(LINE_CHANNEL_SECRET)
 
-# 初始化辨識器 (先註解掉直到你下載了 best.pt)
-# inference = FoodInference()
+# 初始化辨識器
+inference = FoodInference()
 
 @app.post("/callback")
 async def callback(request: Request):
@@ -49,17 +50,24 @@ def handle_image(event):
         for chunk in message_content.iter_content():
             fd.write(chunk)
 
-    # 3. 執行辨識 (這裡等 best.pt 到位後取消註解)
-    # result = inference.analyze(file_path)
+    # 3. 執行辨識
+    result = inference.analyze(file_path)
     
     # 暫時的回覆邏輯
     reply = "圖片已收到！AI 正在辨識中..."
     
-    # if result["success"]:
-    #     log_meal(result['name'], result['calories'])
-    #     reply = (f"識到：{result['name']} ({result['conf']})\n"
-    #              f"🔥 熱量：{result['calories']} kcal/{result['unit']}\n"
-    #              f"📊 營養：{result['nutrition']}")
+    if result["success"]:
+        # 紀錄飲食
+        log_meal(result['name'], result['calories'])
+        
+        # 組合回覆內容
+        reply = (f"🔍 辨識成功：{result['name']}\n"
+                 f"🔥 熱量：{result['calories']} kcal/{result['unit']}\n"
+                 f"📊 營養：{result['nutrition']}\n"
+                 f"✨ 信心度：{result['conf']}\n\n"
+                 f"✅ 已為您存入飲食日誌！")
+    else:
+        reply = "抱歉，目前我認不出這個食物，我會再努力學習的！😢"
     
     line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply))
     
