@@ -1,0 +1,122 @@
+{
+  "bawan": {
+    "name": "肉圓",
+    "calories": 450,
+    "protein": 10,
+    "fat": 20,
+    "carbs": 58,
+    "unit": "顆"
+  },
+  "beef_noodles": {
+    "name": "牛肉麵",
+    "calories": 630,
+    "protein": 32,
+    "fat": 20,
+    "carbs": 80,
+    "unit": "碗"
+  },
+  "braised_napa_cabbage": {
+    "name": "滷白菜",
+    "calories": 120,
+    "protein": 3,
+    "fat": 8,
+    "carbs": 9,
+    "unit": "份"
+  },
+  "braised_pork_over_rice": {
+    "name": "滷肉飯",
+    "calories": 450,
+    "protein": 14,
+    "fat": 19,
+    "carbs": 55,
+    "unit": "碗"
+  },
+  "chicken_mushroom_soup": {
+    "name": "香菇雞湯",
+    "calories": 180,
+    "protein": 22,
+    "fat": 9,
+    "carbs": 3,
+    "unit": "碗"
+  },
+  "chinese_pickled_cucumber": {
+    "name": "涼拌小黃瓜",
+    "calories": 65,
+    "protein": 1,
+    "fat": 4,
+    "carbs": 6,
+    "unit": "份"
+  },
+  "cold_noodle": {
+    "name": "涼麵",
+    "calories": 480,
+    "protein": 14,
+    "fat": 22,
+    "carbs": 56,
+    "unit": "份"
+  },
+  "deep-fried_chicken_cutlets": {
+    "name": "炸雞排",
+    "calories": 600,
+    "protein": 35,
+    "fat": 32,
+    "carbs": 43,
+    "unit": "片"
+  },
+  "egg_pancake_roll": {
+    "name": "蛋餅",
+    "calories": 305,
+    "protein": 11,
+    "fat": 15,
+    "carbs": 31,
+    "unit": "份"
+  },
+  "fried_instant_noodles": {
+    "name": "炒泡麵",
+    "calories": 580,
+    "protein": 12,
+    "fat": 28,
+    "carbs": 70,
+    "unit": "盤"
+  },
+  "fried_rice_noodles": {
+    "name": "炒米粉",
+    "calories": 420,
+    "protein": 9,
+    "fat": 16,
+    "carbs": 60,
+    "unit": "盤"
+  },
+  "fried-spanish_mackerel_thick_soup": {
+    "name": "土魠魚羹",
+    "calories": 450,
+    "protein": 18,
+    "fat": 20,
+    "carbs": 50,
+    "unit": "碗"
+  },
+  "loofah": {
+    "name": "炒絲瓜",
+    "calories": 85,
+    "protein": 2,
+    "abs_fat": 5,
+    "carbs": 8,
+    "unit": "份"
+  },
+  "Over-easy egg": {
+    "name": "荷包蛋",
+    "calories": 105,
+    "protein": 7,
+    "fat": 8,
+    "carbs": 1,
+    "unit": "顆"
+  },
+  "turkey_rice": {
+    "name": "火雞肉飯",
+    "calories": 380,
+    "protein": 18,
+    "fat": 12,
+    "carbs": 50,
+    "unit": "碗"
+  }
+}

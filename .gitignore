@@ -1,0 +1,16 @@
+# 環境變數與金鑰
+.env
+
+# Python 虛擬環境
+venv/
+__pycache__/
+*.pyc
+
+# 訓練模型與資料
+models/*.pt
+runs/
+datasets/
+
+# 暫存圖片與日誌
+temp_*.jpg
+diet_logs.csv
