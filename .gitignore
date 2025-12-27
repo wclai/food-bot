@@ -8,7 +8,7 @@ __pycache__/
 
 # 訓練模型與資料
 training_file/
-models/*.pt
+# models/*.pt
 runs/
 datasets/
 
