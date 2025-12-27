@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+line-bot-sdk
+python-dotenv
+ultralytics
+python-multipart
