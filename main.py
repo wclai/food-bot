@@ -137,10 +137,11 @@ def get_today_total():
     return total_cal
 
 @app.post("/callback")
-async def callback(request: Request):
-    signature = request.headers['X-Line-Signature']
+async def callback(request: Request, background_tasks: BackgroundTasks):
+    signature = request.headers.get('X-Line-Signature', '')
     body = await request.body()
-    handler.handle(body.decode(), signature)
+    # 丟到背景執行，立刻回傳 200 給 Line
+    background_tasks.add_task(handler.handle, body.decode(), signature)
     return 'OK'
 
 @handler.add(MessageEvent, message=TextMessage) # 確保這裡是 TextMessage

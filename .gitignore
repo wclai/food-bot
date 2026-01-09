@@ -15,3 +15,7 @@ datasets/
 # 暫存圖片與日誌
 temp_*.jpg
 diet_logs.csv
+
+# Testing files
+test_*.py
+test_*jpg
